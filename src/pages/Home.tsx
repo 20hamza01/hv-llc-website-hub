@@ -12,9 +12,16 @@ const fadeIn = {
 const Home = () => {
   return (
     <div>
-      {/* Hero Section with Gradient */}
-      <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-16 md:py-24">
-        <div className="container-custom">
+      {/* Hero Section with Gradient and Minimalistic Background */}
+      <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-16 md:py-24 relative overflow-hidden">
+        {/* Minimalistic background pattern */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-gray-200 opacity-20 blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-gray-300 opacity-20 blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/3 w-40 h-40 rounded-full bg-gray-100 opacity-30 blur-2xl"></div>
+        </div>
+        
+        <div className="container-custom relative z-10">
           <motion.div
             initial="hidden"
             animate="visible"
