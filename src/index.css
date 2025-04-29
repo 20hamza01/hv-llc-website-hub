@@ -41,10 +41,92 @@
   body {
     @apply bg-background text-foreground font-inter;
   }
+  
+  /* Smooth scrolling for the whole page */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Gradient text utility */
+  .text-gradient {
+    @apply bg-gradient-to-r from-black to-gray-700 bg-clip-text text-transparent;
+  }
+  
+  /* Card hover effect */
+  .hover-card {
+    @apply transition-all duration-300 hover:shadow-md hover:-translate-y-1;
+  }
+  
+  /* Button hover animation */
+  .btn-animated {
+    @apply transition-all duration-300 transform hover:scale-105 hover:shadow-md;
+  }
 }
 
 @layer utilities {
   .container-custom {
     @apply container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  /* Animation utilities */
+  .fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .slide-in-left {
+    animation: slideInLeft 0.5s ease-out forwards;
+  }
+  
+  .slide-in-right {
+    animation: slideInRight 0.5s ease-out forwards;
+  }
+  
+  .scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }
